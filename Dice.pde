@@ -1,43 +1,34 @@
-
 Die one;
-Die two;
-Die three;
-Die four;
-Die five;
-Die six;
-Die seven;
-Die eight;
-Die nine;
 void setup()
 {
   size(500,500);
   noLoop();
+  background (#EDDFDF);
 }
 void draw()
 {
   //your code here
   background (#EDDFDF);
-
-  
-  
   int sum=0;
   for (int i=100; i<301; i+=100)
   {
     for (int j=100; j<301; j+=100)
     { 
+      
       one = new Die (i, j);
       one.show();
       one.roll();
+      sum = sum+ one.numDots;
      
-     sum= (int)((int)(Math.random ()*6)+1+Math.random ()*6)+1+ (int)(Math.random ()*6)+1+(int)(Math.random ()*6)+1+(int)(Math.random ()*6)+1+(int)(Math.random ()*6)+1;
     }
-    text("Total:"+ sum, 50,50);
   }
-    
+  text("Total:"+ sum, 100,50);  
 }
 void mousePressed()
 {
+  background (#EDDFDF);
   redraw();
+  
 }
 class Die //models one single dice cube
 {
@@ -57,7 +48,7 @@ class Die //models one single dice cube
     translate(-55, -55);
     if (numDots== 6)
     {
-       fill (255, 0, 0);
+       fill (#08526C);
       ellipse (65 + myX, 60+ myY, 7, 7);
       ellipse (65+ myX, 75 + myY, 7, 7);
       ellipse (65+ myX, 90+myY, 7, 7);
@@ -68,7 +59,7 @@ class Die //models one single dice cube
 
     if (numDots == 5)
     {
-      fill (255, 0, 0);
+      fill (#08526C);
       ellipse (65+ myX, 60+myY, 7, 7);
       ellipse (65+ myX, 75+myY, 7, 7);
       ellipse (65+ myX, 90+myY, 7, 7);
@@ -78,7 +69,7 @@ class Die //models one single dice cube
 
     if (numDots == 4)
     {
-      fill (255, 0, 0);
+      fill (#08526C);
       ellipse (65+ myX, 60+myY, 7, 7);
       ellipse (65+ myX, 75+myY, 7, 7);
       ellipse (65+ myX, 90+myY, 7, 7);
@@ -87,7 +78,7 @@ class Die //models one single dice cube
 
     if (numDots== 3)
     {
-      fill (255, 0, 0);
+      fill (#08526C);
       ellipse (65+ myX, 60+myY, 7, 7);
       ellipse (65+ myX, 75+myY, 7, 7);
       ellipse (65+ myX, 90+myY, 7, 7);
@@ -95,14 +86,14 @@ class Die //models one single dice cube
 
     if (numDots == 2)
     {
-      fill (255, 0, 0);
+      fill (#08526C);
       ellipse (65+ myX, 60+myY, 7, 7);
       ellipse (65+ myX, 75+myY, 7, 7);
     }
 
     if (numDots== 1)
     {
-      fill (255, 0, 0);
+      fill (#08526C);
       ellipse (65 + myX, 60+myY, 7, 7);
     }
     resetMatrix();
@@ -111,7 +102,7 @@ class Die //models one single dice cube
 
     void show()
     {
-      fill (0, 255, 0);
+      fill (#BBDEEA);
       rect (myX, myY, 50, 50,10);
       fill (255, 0, 0);
       
